@@ -13,17 +13,17 @@
 CLAIM_EXTERN_C_START
 
 void* gCoreEngine;
-DllHelper helper;
+//DllHelper helper;
 JNIEXPORT void JNICALL
 Java_com_arcsoft_myapplication_JNITest_nvJNITestStart(JNIEnv *env, jobject thiz) {
-    //DllHelper helper;
+    DllHelper helper;
     helper.CreateEngine(&gCoreEngine);
     helper.AsynProcess(gCoreEngine);
 }
 
 JNIEXPORT void JNICALL
 Java_com_arcsoft_myapplication_JNITest_nvJNITestStop(JNIEnv *env, jobject thiz) {
-    //DllHelper helper;
+    DllHelper helper;
     helper.AsncStop(gCoreEngine);
     helper.DestroyEngine(&gCoreEngine);
 }
